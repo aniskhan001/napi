@@ -4,10 +4,7 @@ let router = express.Router();
 let mongoose = require('mongoose');
 let model = require('./model');
 
-// DB connection
-// mongoose.connect(config.database);
-// mongoose.model(require('./model'));
-
+// list users
 router.get('/', function(req, res){
     model.find({}, function(err, data){
         res.json(data);
@@ -39,5 +36,20 @@ router.post('/', function(req, res){
     res.send(response);
     
 });
+
+// get single user
+router.get('/:id', function(req, res){
+    let response = {};
+    model.findById(req.params.id, function(err, data){
+        if (err) {
+            response.status = 404;
+            response.message = err;
+        } else {
+            response.name = data.firstName + " " + data.lastName;
+            response.status = 200;
+        }
+        res.json(response);
+    });
+})
 
 module.exports = router;

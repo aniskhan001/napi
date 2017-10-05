@@ -7,7 +7,7 @@ let model = require('./model');
 // list users
 router.get('/', function(req, res){
     model.find({}, function(err, data){
-        res.json(data);
+        res.status(200).json(data);
     });
 });
 
@@ -26,14 +26,12 @@ router.post('/', function(req, res){
         db.save(function(err, data){
             // saving
             if (err) {
-                response = {status: 500, message: "error inserting to db"};
+                res.status(500).send({message: "error inserting to db"});
             } else {
-                response = {status: 200, message: data};        
+                res.status(200).send({message: data});
             }
         })
     }
-
-    res.send(response);
     
 });
 
@@ -42,14 +40,34 @@ router.get('/:id', function(req, res){
     let response = {};
     model.findById(req.params.id, function(err, data){
         if (err) {
-            response.status = 404;
             response.message = err;
+            res.status(404).json(response);            
         } else {
             response.name = data.firstName + " " + data.lastName;
-            response.status = 200;
+            res.status(200).json(response);
         }
-        res.json(response);
     });
+});
+
+
+// post tags
+router.post('/:id/tags', function(req, res){
+    let response = {};
+    let tags = req.body.tags;
+    console.log(tags);
+    model.findById(req.params.id, function(err, data){
+        data.tags = tags;
+        data.save(function(err, updatedData){
+            if (err) {
+                res.status(500).json({});
+            } else {
+                res.status(200).send({});
+            }
+            // console.log(updatedData);
+        })
+    });
+
+    
 })
 
 module.exports = router;

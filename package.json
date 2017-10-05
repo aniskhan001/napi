@@ -1,0 +1,24 @@
+{
+  "name": "api-test",
+  "version": "1.0.0",
+  "description": "Pathao Test",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aniskhan001/coding-test.git"
+  },
+  "author": "Anisuzzaman Khan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aniskhan001/coding-test/issues"
+  },
+  "homepage": "https://github.com/aniskhan001/coding-test#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.1",
+    "mongoose": "^4.12.0"
+  }
+}

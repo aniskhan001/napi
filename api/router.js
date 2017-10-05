@@ -6,9 +6,34 @@ let model = require('./model');
 
 // list users
 router.get('/', function(req, res){
-    model.find({}, function(err, data){
-        res.status(200).json(data);
-    });
+    let taglist = req.query.tags;
+    if (taglist) {
+        // get users by tag
+        taglist = taglist.split(',');
+        console.log(taglist);
+        // res.status(200).json(data);
+        model.find({ tags: { $in : taglist} }, function(err, data){
+            if (err) {
+                res.status(404).json({message: "not found"});                
+            } else {
+                let users = [];
+                for (x in data) {
+                    users.push({
+                        id: data[x].id,
+                        name: data[x].firstName + " " + data[x].lastName,
+                        tags: data[x].tags
+                    })
+                }
+                res.status(200).json(users);                
+            }
+        });
+        
+    } else {
+        model.find({}, function(err, data){
+            res.status(200).json(data);
+        });
+    }
+    
 });
 
 // save user info
@@ -66,8 +91,8 @@ router.post('/:id/tags', function(req, res){
             // console.log(updatedData);
         })
     });
-
     
-})
+});
+
 
 module.exports = router;

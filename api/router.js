@@ -10,8 +10,7 @@ router.get('/', function(req, res){
     if (taglist) {
         // get users by tag
         taglist = taglist.split(',');
-        console.log(taglist);
-        // res.status(200).json(data);
+
         model.find({ tags: { $in : taglist} }, function(err, data){
             if (err) {
                 res.status(404).json({message: "not found"});                
@@ -79,7 +78,7 @@ router.get('/:id', function(req, res){
 router.post('/:id/tags', function(req, res){
     let response = {};
     let tags = req.body.tags;
-    console.log(tags);
+
     model.findById(req.params.id, function(err, data){
         data.tags = tags;
         data.save(function(err, updatedData){
@@ -88,7 +87,6 @@ router.post('/:id/tags', function(req, res){
             } else {
                 res.status(200).send({});
             }
-            // console.log(updatedData);
         })
     });
     

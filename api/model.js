@@ -1,10 +1,12 @@
 let mongoose = require('mongoose');
+let config = require('./config');
+let schema = mongoose.Schema;
+
+mongoose.connect(config.database);
 
 let userSchema = {
     firstName: String,
     lastName: String
 };
 
-mongoose.model('users', userSchema);
-
-module.exports = mongoose;
+module.exports = mongoose.model('users', userSchema);

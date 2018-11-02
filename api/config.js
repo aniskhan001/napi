@@ -1,4 +1,4 @@
-let config = {
+const config = {
     database: "mongo/user_test"
 }
 

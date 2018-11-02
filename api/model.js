@@ -1,6 +1,5 @@
-let mongoose = require('mongoose');
-let config = require('./config');
-let schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const config = require('./config');
 
 mongoose.connect(config.database);
 

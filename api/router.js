@@ -1,8 +1,7 @@
 // Dependencies
-let express = require('express');
-let router = express.Router();
-let mongoose = require('mongoose');
-let model = require('./model');
+const express = require('express');
+const router = express.Router();
+const model = require('./model');
 
 // list users
 router.get('/', function(req, res){

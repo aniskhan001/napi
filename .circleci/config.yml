@@ -18,8 +18,8 @@ jobs:
           - v1-dependencies-
 
       - run:
-        name: install-dependencies
-        command: npm install
+          name: install-dependencies
+          command: npm install
 
       - save_cache:
           paths:
@@ -27,5 +27,5 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
-        name: api-integration-test
-        command: mocha
+          name: api-integration-test
+          command: mocha

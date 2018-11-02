@@ -1,13 +1,13 @@
 FROM node:slim
 
-RUN mkdir /app
 WORKDIR /app
 
-COPY package.json /app
-RUN cd /app
+COPY package.json .
+COPY package-lock.json .
 RUN npm install
 
 COPY . /app
 
 EXPOSE 3000
-CMD ["npm", "start"]
+ENTRYPOINT [ "npm" ]
+CMD [ "start" ]

@@ -44,7 +44,7 @@ jobs:
 
       - run:
           name: api-integration-test
-          command: mocha
+          command: npm test
 
 workflows:
   version: 2

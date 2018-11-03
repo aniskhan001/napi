@@ -16,7 +16,7 @@ jobs:
   test:
     docker:
       - image: circleci/node:10
-      - image: circleci/mongo:4
+      - image: mongo:4
 
     environment:
       - NODE_ENV: development

@@ -10,14 +10,14 @@ jobs:
           command: |
             export DH_USER=`echo ${DOCKER_HUB_USER} | base64 --decode`
             export DH_PASS=`echo ${DOCKER_HUB_PASS} | base64 --decode`
-            docker login -u $DH_USER -p $DH_PASS
-            docker build -t circleci/napi-master:$CIRCLE_BRANCH .
-            docker push circleci/napi-master:$CIRCLE_BRANCH
+            docker login -u $DH_USER --password-stdin $DH_PASS
+            docker build -t aniskhan001/napi:$CIRCLE_BRANCH .
+            docker push aniskhan001/napi:$CIRCLE_BRANCH
 
   test:
     docker:
-      - image: circleci/napi-master:$CIRCLE_BRANCH
-      - image: circleci/mongo:4
+      - image: aniskhan001/napi:$CIRCLE_BRANCH
+      - image: mongo:4
 
     working_directory: ~/napi-ci
 

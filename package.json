@@ -1,7 +1,7 @@
 {
-  "name": "api-test",
-  "version": "1.0.0",
-  "description": "Pathao Test",
+  "name": "napi",
+  "version": "2.0.0",
+  "description": "DevOps Practice",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

@@ -15,8 +15,8 @@ jobs:
 
   test:
     docker:
-      - image: circleci/node:10
-      - image: mongo:4
+      - image: circleci/node:slim
+      - image: circleci/mongo:4
 
     environment:
       - NODE_ENV: development
@@ -46,9 +46,13 @@ jobs:
           name: api-integration-test
           command: npm test
 
+      - run:
+          name: generate-coverage
+          command: npm run cover
+
 workflows:
   version: 2
-  build_and_test:
+  test_and_build:
     jobs:
       - test
       - build:

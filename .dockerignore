@@ -1,7 +1,9 @@
 .circleci
 .dockerignore
 .DS_Store
+.editorconfig
 .gitignore
 docker-compose.yml
 Dockerfile
 node_modules
+test

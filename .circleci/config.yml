@@ -5,11 +5,14 @@ jobs:
     steps:
       - checkout
 
-      # build the application image
-      - run: docker build -t circleci/napi-master:$CIRCLE_BRANCH .
-
-      # deploy the image
-      - run: docker push circleci/napi-master:$CIRCLE_BRANCH
+      - run:
+        name: build_publish_image
+        command: |
+          export DH_USER=`echo ${DOCKER_HUB_USER} | base64 --decode`
+          export DH_PASS=`echo ${DOCKER_HUB_PASS} | base64 --decode`
+          docker login -u $DH_USER -p $DH_PASS
+          docker build -t circleci/napi-master:$CIRCLE_BRANCH .
+          docker push circleci/napi-master:$CIRCLE_BRANCH
 
   test:
     docker:

@@ -1,4 +1,6 @@
+.circleci
 .dockerignore
+.DS_Store
 .gitignore
 docker-compose.yml
 Dockerfile

@@ -1,8 +1,19 @@
 version: 2
 jobs:
   build:
+    machine: true
+    steps:
+      - checkout
+
+      # build the application image
+      - run: docker build -t circleci/napi-master:$CIRCLE_BRANCH .
+
+      # deploy the image
+      - run: docker push circleci/napi-master:$CIRCLE_BRANCH
+
+  test:
     docker:
-      - image: circleci/node:10
+      - image: circleci/napi-master:$CIRCLE_BRANCH
       - image: circleci/mongo:4
 
     working_directory: ~/napi-ci

@@ -20,8 +20,6 @@ jobs:
 
     environment:
       - NODE_ENV: development
-      - COVERALLS_SERVICE_NAME: circleci
-      - COVERALLS_REPO_TOKEN: QRf1xizffrzXrWpFOFDoS2r03HALBSd6U
 
     working_directory: ~/napi-ci
 
@@ -50,7 +48,10 @@ jobs:
 
       - run:
           name: generate-coverage
-          command: npm run cover
+          command: |
+            export COVERALLS_SERVICE_NAME=circleci
+            export COVERALLS_REPO_TOKEN=${COVERALLS_REPO_TOKEN}
+            npm run cover
 
 workflows:
   version: 2

@@ -20,6 +20,8 @@ jobs:
 
     environment:
       - NODE_ENV: development
+      - COVERALLS_SERVICE_NAME: circleci
+      - COVERALLS_REPO_TOKEN: ${COVERALLS_REPO_TOKEN}
 
     working_directory: ~/napi-ci
 

@@ -15,7 +15,7 @@ jobs:
 
   test:
     docker:
-      - image: aniskhan001/napi:$CIRCLE_BRANCH
+      - image: circleci/node:10
       - image: circleci/mongo:4
 
     working_directory: ~/napi-ci
@@ -32,7 +32,9 @@ jobs:
 
       - run:
           name: install-dependencies
-          command: npm install
+          command: |
+            npm install -g mocha
+            npm install
 
       - save_cache:
           paths:

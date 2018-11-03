@@ -8,16 +8,15 @@ jobs:
       - run:
           name: build_publish_image
           command: |
-            export DH_USER=`echo ${DOCKER_HUB_USER} | base64 --decode`
-            export DH_PASS=`echo ${DOCKER_HUB_PASS} | base64 --decode`
-            docker login -u $DH_USER --password-stdin $DH_PASS
+            export DH_USER=`echo ${DOCKER_HUB_USER} | base64 -d`
+            echo ${DOCKER_HUB_PASS} | base64 -d | docker login -u $DH_USER --password-stdin
             docker build -t aniskhan001/napi:$CIRCLE_BRANCH .
             docker push aniskhan001/napi:$CIRCLE_BRANCH
 
   test:
     docker:
       - image: aniskhan001/napi:$CIRCLE_BRANCH
-      - image: mongo:4
+      - image: circleci/mongo:4
 
     working_directory: ~/napi-ci
 

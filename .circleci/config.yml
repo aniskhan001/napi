@@ -2,6 +2,10 @@ version: 2
 jobs:
   build:
     machine: true
+    branches:
+      ignore:
+        - dependabot/.*
+        - /feature-.*/
     steps:
       - checkout
 

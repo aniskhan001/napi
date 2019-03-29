@@ -61,7 +61,8 @@ workflows:
       - build:
           requires:
             - test
-          branches:
-            ignore:
-              - dependabot/.*
-              - /feature-.*/
+          filters:
+            branches:
+              ignore:
+                - dependabot/.*
+                - /feature-.*/

@@ -21,7 +21,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mongoose": "^5.4.20"
+    "mongoose": "^5.4.22"
   },
   "devDependencies": {
     "chai": "^4.2.0",

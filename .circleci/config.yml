@@ -64,5 +64,5 @@ workflows:
           filters:
             branches:
               ignore:
-                - dependabot/.*
-                - /feature-.*/
+                - /dependabot\/.*/
+                - /feature\/.*/

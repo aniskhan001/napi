@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: napi
-        image: aniskhan001/napi:master
+        image: aniskhan001/napi:mongo-deploy-fix
         imagePullPolicy: Always
         ports:
         - name: http

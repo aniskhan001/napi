@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: napi
   name: napi
   labels:
     app: napi

@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
@@ -16,7 +17,7 @@ spec:
     spec:
       containers:
       - name: mongo
-        image: mongo:4.0
+        image: mongo:4.1
         imagePullPolicy: Always
         ports:
         - name: http

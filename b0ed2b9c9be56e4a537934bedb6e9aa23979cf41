@@ -1,0 +1,1 @@
+{"jobID":"da1a11aa-8ad8-bf7e-f113-a2b2177f2447","spec":{"type":"policy","cause":{"Message":"","User":"MD ANISUZZAMAN KHAN \u003caniskhan001@outlook.com\u003e"},"spec":{"default:deployment/napi":{"add":{"tag.napi":"glob:master"},"remove":null}}},"result":null}

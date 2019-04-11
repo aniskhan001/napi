@@ -1,0 +1,1 @@
+{"jobID":"2a04f5d7-6339-77a2-45fb-74363c00d4e5","spec":{"type":"policy","cause":{"Message":"","User":"MD ANISUZZAMAN KHAN \u003caniskhan001@outlook.com\u003e"},"spec":{"default:deployment/napi":{"add":{"automated":"true"},"remove":null}}},"result":null}

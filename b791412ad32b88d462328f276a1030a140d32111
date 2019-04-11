@@ -1,0 +1,1 @@
+{"jobID":"c1bdb7f0-e73f-45c5-0697-3afc14aba772","spec":{"type":"policy","cause":{"Message":"","User":"MD ANISUZZAMAN KHAN \u003caniskhan001@outlook.com\u003e"},"spec":{"default:deployment/mongo":{"add":{"tag.mongo":"glob:4.1*"},"remove":null}}},"result":null}

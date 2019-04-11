@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: mongo
-        image: mongo:3
+        image: mongo:4.1
         imagePullPolicy: Always
         ports:
         - name: http

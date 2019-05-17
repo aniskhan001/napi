@@ -20,7 +20,7 @@
   "homepage": "https://github.com/aniskhan001/coding-test#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
+    "express": "^4.17.0",
     "mongoose": "^5.5.4"
   },
   "devDependencies": {

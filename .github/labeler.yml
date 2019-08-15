@@ -1,0 +1,22 @@
+config:
+  - api/config.js
+
+model:
+  - api/config.js
+
+router:
+  - api/config.js
+
+test:
+  - test/*
+
+kubernetes:
+  - k8s/*
+
+docker:
+  - Dockerfile
+  - ./*.Dokcerfile
+  - docker-compose.yml
+
+packaging:
+  - package*.json

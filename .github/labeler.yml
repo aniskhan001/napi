@@ -2,10 +2,10 @@ config:
   - api/config.js
 
 model:
-  - api/config.js
+  - api/model.js
 
 router:
-  - api/config.js
+  - api/router.js
 
 test:
   - test/*

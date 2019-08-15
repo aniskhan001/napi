@@ -47,7 +47,6 @@ router.post('/', function(req, res){
         db.firstName = firstName;
         db.lastName = lastName;
         db.save(function(err, data){
-            // saving
             if (err) {
                 res.status(500).send({message: "error inserting to db"});
             } else {

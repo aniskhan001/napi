@@ -42,7 +42,7 @@ router.post('/', function(req, res){
     let lastName = req.body.lastName;
 
     if (!firstName && !lastName) {
-        response = {status: 403, message: "please enter firstname and lastname"};
+        response = {message: "please enter firstname and lastname"};
     } else {
         db.firstName = firstName;
         db.lastName = lastName;
@@ -54,7 +54,6 @@ router.post('/', function(req, res){
             }
         })
     }
-
 });
 
 // get single user
@@ -87,7 +86,6 @@ router.post('/:id/tags', function(req, res){
             }
         })
     });
-
 });
 
 

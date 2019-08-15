@@ -54,7 +54,6 @@ router.post('/', function(req, res){
             }
         })
     }
-
 });
 
 // get single user
@@ -87,7 +86,6 @@ router.post('/:id/tags', function(req, res){
             }
         })
     });
-
 });
 
 

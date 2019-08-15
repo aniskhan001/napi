@@ -7,7 +7,6 @@ const model = require('./model');
 router.get('/', function(req, res){
     let taglist = req.query.tags;
     if (taglist) {
-        // get users by tag
         taglist = taglist.split(',');
 
         model.find({ tags: { $in : taglist} }, function(err, data){
@@ -31,7 +30,6 @@ router.get('/', function(req, res){
             res.status(200).json(data);
         });
     }
-
 });
 
 // save user info

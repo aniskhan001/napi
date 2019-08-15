@@ -12,7 +12,7 @@ router.get('/', function(req, res){
 
         model.find({ tags: { $in : taglist} }, function(err, data){
             if (err) {
-                res.status(404).json({message: "not found"});                
+                res.status(404).json({message: "not found"});
             } else {
                 let users = [];
                 for (x in data) {
@@ -22,16 +22,16 @@ router.get('/', function(req, res){
                         tags: data[x].tags
                     })
                 }
-                res.status(200).json(users);                
+                res.status(200).json(users);
             }
         });
-        
+
     } else {
         model.find({}, function(err, data){
             res.status(200).json(data);
         });
     }
-    
+
 });
 
 // save user info
@@ -47,7 +47,6 @@ router.post('/', function(req, res){
         db.firstName = firstName;
         db.lastName = lastName;
         db.save(function(err, data){
-            // saving
             if (err) {
                 res.status(500).send({message: "error inserting to db"});
             } else {
@@ -55,7 +54,7 @@ router.post('/', function(req, res){
             }
         })
     }
-    
+
 });
 
 // get single user
@@ -64,7 +63,7 @@ router.get('/:id', function(req, res){
     model.findById(req.params.id, function(err, data){
         if (err) {
             response.message = err;
-            res.status(404).json(response);            
+            res.status(404).json(response);
         } else {
             response.name = data.firstName + " " + data.lastName;
             res.status(200).json(response);
@@ -88,7 +87,7 @@ router.post('/:id/tags', function(req, res){
             }
         })
     });
-    
+
 });
 
 

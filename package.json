@@ -24,7 +24,7 @@
     "mongoose": "^5.9.10"
   },
   "devDependencies": {
-    "minimist": ">=1.2.2",
+    "minimist": ">=1.2.3",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "coveralls": "^3.0.13",

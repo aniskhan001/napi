@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha",
-    "cover": "nyc mocha && nyc report --reporter=text-lcov | coveralls"
+    "test": "mocha --recursive --exit --timeout 600000",
+    "cover": "nyc mocha --recursive --exit --timeout 600000 && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",

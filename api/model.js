@@ -1,12 +1,12 @@
-const mongoose = require('mongoose');
-const config = require('./config');
+const mongoose = require('mongoose')
+const config = require('./config')
 
-mongoose.connect(config.database);
+mongoose.connect(config.database)
 
-let userSchema = {
-    firstName: String,
-    lastName: String,
-    tags: Array
-};
+const userSchema = {
+  firstName: String,
+  lastName: String,
+  tags: Array
+}
 
-module.exports = mongoose.model('users', userSchema);
+module.exports = mongoose.model('users', userSchema)

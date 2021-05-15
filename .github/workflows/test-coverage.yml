@@ -1,4 +1,4 @@
-name: Test Coveralls
+name: Tests
 on:
   - push
   - pull_request
@@ -20,7 +20,7 @@ jobs:
       - run: npm ci
       - run: npm test
 
-  test-coverage:
+  generate-coverage:
     runs-on: ubuntu-latest
 
     steps:

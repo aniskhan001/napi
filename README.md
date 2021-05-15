@@ -1,8 +1,8 @@
 # NAPI
-[![Build Status](https://aniskhan001.visualstudio.com/NAPI/_apis/build/status/aniskhan001.napi?branchName=main)](https://aniskhan001.visualstudio.com/NAPI/_build/latest?definitionId=1&branchName=main)
-[![CircleCI](https://circleci.com/gh/aniskhan001/napi.svg?style=svg)](https://circleci.com/gh/aniskhan001/napi)
-[![Codeship Status for aniskhan001/napi](https://app.codeship.com/projects/e04844c0-f515-0136-2f32-1e71af04627f/status?branch=main)](https://app.codeship.com/projects/320817)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c86f0bcabb1a4040981bb2fe0b663e31)](https://www.codacy.com/app/aniskhan001/napi?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aniskhan001/napi&amp;utm_campaign=Badge_Grade)
+[![Code QL](https://github.com/aniskhan001/napi/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/aniskhan001/napi/actions/workflows/codeql-analysis.yml)
+[![Docker build](https://github.com/aniskhan001/napi/actions/workflows/docker-build-push.yml/badge.svg)](https://github.com/aniskhan001/napi/actions/workflows/docker-build-push.yml)
+[![Super Lint](https://github.com/aniskhan001/napi/actions/workflows/lint.yml/badge.svg)](https://github.com/aniskhan001/napi/actions/workflows/lint.yml)
+[![Tests](https://github.com/aniskhan001/napi/actions/workflows/coverall.yml/badge.svg)](https://github.com/aniskhan001/napi/actions/workflows/coverall.yml)
 [![Coverage Status](https://coveralls.io/repos/github/aniskhan001/napi/badge.svg?branch=main)](https://coveralls.io/github/aniskhan001/napi?branch=main)
 
 A sample **N**ode **API** for automation practice!

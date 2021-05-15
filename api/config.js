@@ -1,5 +1,5 @@
 const config = {
-    database: "mongo:27017/users"
+  database: 'mongo:27017/users'
 }
 
-module.exports = config;
+module.exports = config

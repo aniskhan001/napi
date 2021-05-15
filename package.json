@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha --recursive --exit --timeout 600000",
-    "cover": "nyc mocha --recursive --exit --timeout 600000 && nyc report --reporter=text-lcov | coveralls"
+    "cover": "nyc mocha --recursive --exit --timeout 600000 && nyc report --reporter=text-lcov"
   },
   "repository": {
     "type": "git",

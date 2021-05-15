@@ -20,6 +20,14 @@ describe('HEALTH check!', () => {
       done()
     })
   })
+
+  it('should not get anything since nothing is created', (done) => {
+    chai.request(app).get('/:id').end((err, res) => {
+      should.not.exist(err)
+      res.should.have.status(404)
+      done()
+    })
+  })
 })
 
 module.exports = app

@@ -1,0 +1,17 @@
+name: Create comment
+
+on:
+  pull_request:
+
+jobs:
+  comment:
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Auto generated comment using bot! Can you please check? @aniskhan001'
+            })

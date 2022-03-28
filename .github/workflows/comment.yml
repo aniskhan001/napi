@@ -1,15 +1,27 @@
 name: Notify
 
 on:
-  pull_request_review:
-    types:
-      - edited
-      - dismissed
-      - submitted
+  pull_request:
 
 jobs:
   notify_release_manager:
     if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: jrylan/github-action-reviews-counter@main
+        id: review_checker
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Dump
+        run: |
+          echo ${{ github.event.review.state }}
+          echo ${{ steps.review_checker.outputs.approved }}
+          echo ${{ steps.review_checker.outputs.pending }}
+
+
+  notify_release:
     runs-on: ubuntu-latest
 
     steps:

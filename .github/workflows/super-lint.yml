@@ -15,8 +15,9 @@ name: Super Lint
 #############################
 on:
   push:
-    branches:
-      - '**'
+    pull_requests:
+      branches:
+        - main
 
 ###############
 # Set the Job #

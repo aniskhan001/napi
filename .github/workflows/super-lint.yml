@@ -14,10 +14,9 @@ name: Super Lint
 # Start the job on all push #
 #############################
 on:
-  push:
-    pull_requests:
-      branches:
-        - main
+  pull_requests:
+    branches:
+      - main
 
 ###############
 # Set the Job #

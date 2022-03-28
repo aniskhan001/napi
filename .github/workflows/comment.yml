@@ -1,7 +1,7 @@
 name: Notify
 
 on:
-  pull_request:
+  pull_request_review:
 
 jobs:
   notify_release_manager:

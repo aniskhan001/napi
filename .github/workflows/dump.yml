@@ -1,0 +1,17 @@
+name: DUMP
+on:
+  pull_request_review:
+    types:
+      - submitted
+      - edited
+  check_suite:
+    types:
+      - completed
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump merge state
+        run: |
+          echo ${{ github.event.pull_request.mergeable }}
+          echo ${{ github.event.pull_request.mergeable_state }}

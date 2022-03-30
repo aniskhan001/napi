@@ -4,14 +4,13 @@ on:
     types:
       - submitted
       - edited
-  check_suite:
-    types:
-      - completed
+
 jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      - name: Dump merge state
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
-          echo ${{ github.event.pull_request.mergeable }}
-          echo ${{ github.event.pull_request.mergeable_state }}
+          echo "$GITHUB_CONTEXT"

@@ -8,6 +8,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: hmarr/auto-approve-action@v2
-      with:
-        github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: hmarr/auto-approve-action@v2
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Dump
+        run: |
+          echo ${{ github.event.review.state }}
+          echo ${{ steps.review_checker.outputs.approved }}
+          echo ${{ steps.review_checker.outputs.pending }}
+
+      - name: Dump 2
+        run: echo ${{ github.event.review }}
+
+      - name: Dump 3
+        run: echo ${{ github.event }}

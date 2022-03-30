@@ -12,14 +12,8 @@ jobs:
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
-      - name: Dump
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
-          echo ${{ github.event.review.state }}
-          echo ${{ steps.review_checker.outputs.approved }}
-          echo ${{ steps.review_checker.outputs.pending }}
-
-      - name: Dump 2
-        run: echo ${{ github.event.review }}
-
-      - name: Dump 3
-        run: echo ${{ github.event }}
+          echo "$GITHUB_CONTEXT"

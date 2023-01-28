@@ -10,7 +10,7 @@ router:
 test:
   - test/*
 
-kubernetes:
+k8s:
   - k8s/*
 
 docker:

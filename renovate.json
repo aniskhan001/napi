@@ -4,5 +4,24 @@
     "config:base"
   ],
 
-  "labels": ["automerge"]
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    }
+  ],
+
+  "kubernetes": {
+    "fileMatch": [
+      "k8s/.+\\.yaml$"
+    ]
+  },
+
+  "labels": [
+    "automerge"
+  ]
 }

@@ -1,10 +1,12 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+var morgan = require('morgan')
 
 const app = express()
 const PORT = 3000
 
 app.use(bodyParser.json())
+app.use(morgan('combined'))
 
 // Router definitions
 app.get('/', (req, res) => {

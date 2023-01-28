@@ -20,3 +20,6 @@ docker:
 
 packaging:
   - package*.json
+
+action:
+  - .github/workflows/*

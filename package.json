@@ -5,19 +5,20 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "dev": "node --watch server",
     "test": "mocha --recursive --exit --timeout 600000",
     "cover": "nyc mocha --recursive --exit --timeout 600000 && nyc report --reporter=lcov"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aniskhan001/coding-test.git"
+    "url": "git+https://github.com/aniskhan001/napi.git"
   },
-  "author": "Anisuzzaman Khan",
+  "author": "Anis Khan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aniskhan001/coding-test/issues"
+    "url": "https://github.com/aniskhan001/napi/issues"
   },
-  "homepage": "https://github.com/aniskhan001/coding-test#readme",
+  "homepage": "https://github.com/aniskhan001/napi#readme",
   "dependencies": {
     "body-parser": "^1.20.0",
     "express": "^4.18.1",

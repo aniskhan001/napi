@@ -1,13 +1,15 @@
-FROM node:18.13.0-slim
+FROM node:19.5.0-slim
 
 WORKDIR /app
 
 COPY package.json .
 COPY package-lock.json .
-RUN npm install --only=prod
+RUN npm install
 
 COPY . /app
 
+RUN ls -la
+
 EXPOSE 3000
 ENTRYPOINT [ "npm" ]
-CMD [ "start" ]
+CMD [ "run", "dev" ]

@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-let morgan = require('morgan')
+const morgan = require('morgan')
 
 const app = express()
 const PORT = 3000
@@ -10,7 +10,7 @@ app.use(morgan('combined'))
 
 // Router definitions
 app.get('/', (req, res) => {
-  res.status(200).send('NAPI NAPI test')
+  res.status(200).send('NAPI NAPI test + verify')
 })
 app.use('/users', require('./api/router'))
 

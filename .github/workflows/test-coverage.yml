@@ -10,7 +10,6 @@ on:
       - package.json
       - package-lock.json
       - server.js
-      - .github/workflows/test-coverage.yml
 
 jobs:
   run-test:
@@ -37,10 +36,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Use Node.js 18.x
+      - name: Use Node.js 20.x
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: 20.x
 
       - name: generate coverage report
         run: |

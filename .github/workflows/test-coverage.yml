@@ -3,6 +3,13 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - api/**
+      - test/**
+      - Dockerfile
+      - package.json
+      - package-lock.json
+      - server.js
 
 jobs:
   run-test:

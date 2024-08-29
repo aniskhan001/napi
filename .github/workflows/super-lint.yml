@@ -5,18 +5,14 @@
 ###########################
 name: Super Lint
 
-#
-# Documentation:
-# https://help.github.com/en/articles/workflow-syntax-for-github-actions
-#
-
-#############################
-# Start the job on all push #
-#############################
 on:
   pull_request:
     branches:
       - main
+    paths:
+      - api/**
+      - test/**
+      - server.js
 
 ###############
 # Set the Job #

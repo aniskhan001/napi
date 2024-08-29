@@ -19,9 +19,5 @@
     "fileMatch": [
       "k8s/.+\\.yaml$"
     ]
-  },
-
-  "labels": [
-    "automerge"
-  ]
+  }
 }

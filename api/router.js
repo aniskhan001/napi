@@ -1,5 +1,5 @@
 // Dependencies
-const express = import('express')
+import express from 'express'
 const router = express.Router()
 const Model = import('./model')
 

@@ -1,6 +1,6 @@
-const express = import('express')
-const bodyParser = import('body-parser')
-var morgan = import('morgan')
+import express from 'express'
+import bodyParser from 'body-parser'
+import morgan from 'morgan'
 
 const app = express()
 const PORT = 3000
@@ -12,7 +12,7 @@ app.use(morgan('combined'))
 app.get('/', (req, res) => {
   res.status(200).send('NAPI NAPI')
 })
-app.use('/users', import('./api/router'))
+app.use('/users', require('./api/router'))
 
 app.listen(PORT)
 console.log('API working on PORT: ' + PORT)

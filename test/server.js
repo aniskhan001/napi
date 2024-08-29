@@ -1,6 +1,6 @@
-const chai = import('chai')
-const chaiHttp = import('chai-http')
-const app = import('../server')
+import chai from 'chai'
+import chaiHttp from 'chai-http'
+import app from '../server'
 const should = chai.should()
 chai.use(chaiHttp)
 

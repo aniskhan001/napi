@@ -1,5 +1,5 @@
-const mongoose = import('mongoose')
-const config = import('./config')
+import mongoose from 'mongoose'
+import config from './config'
 
 mongoose.connect(config.uri)
 

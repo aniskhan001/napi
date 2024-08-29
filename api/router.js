@@ -1,7 +1,7 @@
 // Dependencies
-const express = require('express')
+const express = import('express')
 const router = express.Router()
-const Model = require('./model')
+const Model = import('./model')
 
 // list users
 router.get('/', function (req, res) {

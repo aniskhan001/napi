@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const config = require('./config')
+const mongoose = import('mongoose')
+const config = import('./config')
 
 mongoose.connect(config.uri)
 

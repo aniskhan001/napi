@@ -10,6 +10,7 @@ on:
       - package.json
       - package-lock.json
       - server.js
+      - .github/workflows/test-coverage.yml
 
 jobs:
   run-test:

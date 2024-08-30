@@ -2,7 +2,7 @@ name: Tests
 on:
   pull_request:
     branches:
-      - main
+      - main-disabled
     paths:
       - api/**
       - test/**

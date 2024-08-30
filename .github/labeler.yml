@@ -1,25 +1,41 @@
 config:
-  - api/config.js
+  - changed-files:
+    - any-glob-to-any-file:
+      - api/config.js
 
 model:
-  - api/model.js
+  - changed-files:
+    - any-glob-to-any-file:
+      - api/model.js
 
 router:
-  - api/router.js
+  - changed-files:
+    - any-glob-to-any-file:
+      - api/router.js
 
 test:
-  - test/*
+  - changed-files:
+    - any-glob-to-any-file:
+      - test/*
 
 k8s:
-  - k8s/*
+  - changed-files:
+    - any-glob-to-any-file:
+      - k8s/*
 
 docker:
-  - Dockerfile
-  - ./*.Dokcerfile
-  - docker-compose.yml
+  - changed-files:
+    - any-glob-to-any-file:
+        - Dockerfile
+        - ./*.Dokcerfile
+        - docker-compose.yml
 
 packaging:
-  - package*.json
+  - changed-files:
+    - any-glob-to-any-file:
+      - package*.json
 
 action:
-  - .github/workflows/*
+  - changed-files:
+    - any-glob-to-any-file:
+      - .github/workflows/*

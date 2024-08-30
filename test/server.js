@@ -1,8 +1,8 @@
-import chai from 'chai'
-import chaiHttp from 'chai-http'
-import app from '../server'
-const should = chai.should()
-chai.use(chaiHttp)
+import {use} from 'chai';
+import chaiHttp from 'chai-http';
+import {app} from '../server.js'
+
+const chai = use(chaiHttp);
 
 describe('HEALTH check!', () => {
   it('should return 200 on index', (done) => {
@@ -29,5 +29,3 @@ describe('HEALTH check!', () => {
     })
   })
 })
-
-module.exports = app

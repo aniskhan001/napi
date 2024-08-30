@@ -1,7 +1,7 @@
-const mongoose = require('mongoose')
-const config = require('./config')
+import mongoose from 'mongoose'
+import {Config} from './config.js'
 
-mongoose.connect(config.uri)
+mongoose.connect(Config.uri)
 
 const userSchema = {
   firstName: String,
@@ -9,4 +9,4 @@ const userSchema = {
   tags: Array
 }
 
-module.exports = mongoose.model('users', userSchema)
+export const Model = mongoose.model('users', userSchema)

@@ -1,43 +1,35 @@
 // Dependencies
-const express = require('express')
-const router = express.Router()
-const Model = require('./model')
+import express from 'express'
+export const Router = express.Router()
+import { Model } from './model.js'
 
 // list users
-router.get('/', function (req, res) {
+Router.get('/', function (req, res) {
   let taglist = req.query.tags
   if (taglist) {
     // get users by tag
     taglist = taglist.split(',')
 
-    Model.find({ tags: { $in: taglist } }, function (err, data) {
-      if (err) {
-        res.status(404).json({ message: 'not found' })
-      } else {
-        const users = []
-        for (const x in data) {
-          users.push({
-            id: data[x].id,
-            name: data[x].firstName + ' ' + data[x].lastName,
-            tags: data[x].tags
-          })
-        }
-        res.status(200).json(users)
-      }
+    Model.find({ tags: { $in: taglist } })
+    .then(users => {
+      res.status(200).json(users)
+    })
+    .catch(err => {
+      res.status(404).json({ message: 'not found' })
     })
   } else {
-    Model.find({}, function (err, data) {
-      if (err) {
-        res.status(500).json(err)
-        return
-      }
-      res.status(200).json(data)
+    Model.find({})
+    .then(users => {
+      res.status(200).json(users)
+    })
+    .catch(err => {
+      res.status(500).json(err)
     })
   }
 })
 
 // save user info
-router.post('/', function (req, res) {
+Router.post('/', function (req, res) {
   const db = new Model()
   const firstName = req.body.firstName
   const lastName = req.body.lastName
@@ -47,46 +39,44 @@ router.post('/', function (req, res) {
   } else {
     db.firstName = firstName
     db.lastName = lastName
-    db.save(function (err, data) {
-      if (err) {
-        res.status(500).send({ message: 'error inserting to db' })
-      } else {
-        res.status(200).send({ message: data })
-      }
+    db.save()
+    .then(data => {
+      res.status(200).send({ message: data })
+    })
+    .catch(err => {
+      res.status(500).send({ message: 'error inserting to db' })
     })
   }
 })
 
 // get single user
-router.get('/:id', function (req, res) {
-  Model.findById(req.params.id, function (err, data) {
-    if (err) {
-      res.status(404).json(err)
-    } else {
-      const message = data.firstName + ' ' + data.lastName
-      res.status(200).json({ data: message })
-    }
+Router.get('/:id', function (req, res) {
+  Model.findById(req.params.id)
+  .then(data => {
+    const message = data.firstName + ' ' + data.lastName
+    res.status(200).json({ data: message })
+  })
+  .catch(err => {
+    res.status(404).json(err)
   })
 })
 
 // post tags
-router.post('/:id/tags', function (req, res) {
+Router.post('/:id/tags', function (req, res) {
   const tags = req.body.tags
 
-  Model.findById(req.params.id, function (err, data) {
-    if (err) {
-      res.status(500).json({})
-      return
-    }
+  Model.findById(req.params.id)
+  .then(data => {
     data.tags = tags
-    data.save(function (err, updatedData) {
-      if (err) {
-        res.status(500).json({})
-      } else {
-        res.status(200).send({})
-      }
+    data.save()
+    .then(updatedData => {
+      res.status(200).json({})
+    })
+    .catch(err => {
+      res.status(500).json({})
     })
   })
+  .catch(err => {
+    res.status(500).json({})
+  })
 })
-
-module.exports = router

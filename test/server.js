@@ -1,8 +1,9 @@
-const chai = require('chai')
-const chaiHttp = require('chai-http')
-const app = require('../server')
-const should = chai.should()
-chai.use(chaiHttp)
+// TODO: fix test cases
+import {use} from 'chai';
+import chaiHttp from 'chai-http';
+import {app} from '../server.js'
+
+const chai = use(chaiHttp);
 
 describe('HEALTH check!', () => {
   it('should return 200 on index', (done) => {
@@ -29,5 +30,3 @@ describe('HEALTH check!', () => {
     })
   })
 })
-
-module.exports = app

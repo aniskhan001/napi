@@ -13,11 +13,5 @@
       "automerge": true,
       "groupName": "dependencies (non-major)"
     }
-  ],
-
-  "kubernetes": {
-    "fileMatch": [
-      "k8s/.+\\.yaml$"
-    ]
-  }
+  ]
 }
